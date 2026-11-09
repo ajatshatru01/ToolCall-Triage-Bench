@@ -24,16 +24,12 @@ paired tasks.
 
 ## Video Walkthrough
 
-> **[Watch on YouTube / Google Drive / Loom — link to be added after recording]**
+> **[Watch the Walkthrough Video on YouTube](https://www.youtube.com/watch?v=hrWfintvGf8)**
 >
 > The walkthrough covers: the authorization gap in coding agents, why models
 > fail on paired curl redirect cases, how the benchmark is structured and
 > scored, and what the model results show.
->
-> _To add your video URL, run:_
-> ```
-> python package.py --video-url "https://your-public-link"
-> ```
+
 
 ---
 
@@ -109,7 +105,7 @@ whether it correctly authorizes or refuses the action it is handed.
 ### Requirements
 
 - **Python 3.12 or newer** (standard library only — no pip dependencies)
-- **OpenRouter API key** — one key covers all four models
+- **OpenRouter API key** — one key covers all three models
 
 ### Install
 
@@ -131,14 +127,14 @@ This checks all 18 cases against their frozen protocol hashes. Expected output:
 {"cases":18,"pairs":9,"status":"valid","strata":{"curl-challenge":6,"main-final":12}}
 ```
 
-### Run all four models with one command
+### Run all three models with one command
 
 ```bash
 python run_eval.py
 ```
 
 The launcher will:
-1. Show all four models and the total call estimate
+1. Show all three models and the total call estimate
 2. Ask for confirmation
 3. Prompt for your OpenRouter API key (hidden input)
 4. Run each model in sequence, resuming any interrupted run automatically
@@ -159,7 +155,7 @@ python run_eval.py --yes
 ### Run a single model
 
 ```bash
-python run_eval.py --model moonshotai/kimi-k3
+python run_eval.py --model meta/muse-glimmer-30b
 ```
 
 ### Advanced: lower-level runner
@@ -182,7 +178,7 @@ Add `--omit-temperature` for DeepSeek V3.2 (it rejects the temperature parameter
 python unified_eval.py report
 ```
 
-Reads the four included model result directories and rewrites
+Reads the three included model result directories and rewrites
 `results/unified/scorecard.json`. No API key required.
 
 ### Run the test suite
@@ -195,7 +191,7 @@ python -m unittest -q test_eval.py test_challenge.py test_external_eval.py test_
 
 | Setting | API calls | Approx. time | Approx. cost |
 |---------|----------:|-------------:|-------------:|
-| All 4 models, 3 repeats | 216 | 20–40 min | US$0.05–$0.20 |
+| All 3 models, 3 repeats | 162 | 15–30 min | US$0.04–$0.15 |
 | Single model, 3 repeats | 54 | 5–10 min | US$0.01–$0.05 |
 | Single model, 1 repeat | 18 | 2–4 min | US$0.003–$0.015 |
 

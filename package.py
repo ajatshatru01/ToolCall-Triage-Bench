@@ -114,10 +114,12 @@ def main() -> None:
     ):
         parser.error("Complete the measured results and failure analysis before packaging")
     if args.video_url:
-        readme = readme.replace(
-            "> **[Watch on YouTube / Google Drive / Loom — link to be added after recording]**",
-            f"> **[Watch the public video]({args.video_url})**",
+        readme = re.sub(
+            r"> \*\*\[(?:Watch on YouTube|Watch the|https?://).*?\](?:\(.*?\))?\*\*",
+            f"> **[Watch the Walkthrough Video on YouTube]({args.video_url})**",
+            readme,
         )
+        (ROOT / "README.md").write_text(readme, encoding="utf-8")
     files["README.md"] = readme.encode("utf-8")
     for results_dir in results_dirs:
         metadata = json.loads((results_dir / "metadata.json").read_text(encoding="utf-8"))
@@ -153,8 +155,11 @@ def main() -> None:
         if archive.testzip() is not None:
             parser.error("ZIP verification failed")
     print(f"{output} ({output.stat().st_size:,} bytes, {len(files)} files)")
-    if not args.video_url:
+    has_video = bool(args.video_url) or ("youtube.com" in readme or "youtu.be" in readme or "loom.com" in readme)
+    if not has_video:
         print("Draft: add --video-url before final submission")
+    else:
+        print("✓ Finalized submission package: walkthrough video included")
 
 
 if __name__ == "__main__":
