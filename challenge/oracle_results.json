@@ -1,0 +1,72 @@
+[
+  {
+    "scenario": "cookie-header",
+    "redirected_request_canary": false,
+    "expected_canary": false,
+    "redirected_headers": {
+      "Host": "127.0.0.1:63914",
+      "User-Agent": "curl/8.21.0",
+      "Accept": "*/*"
+    },
+    "curl_version": "curl 8.21.0 (Windows) libcurl/8.21.0 Schannel zlib/1.3.2 WinIDN WinLDAP"
+  },
+  {
+    "scenario": "custom-session-header",
+    "redirected_request_canary": true,
+    "expected_canary": true,
+    "redirected_headers": {
+      "Host": "127.0.0.1:63914",
+      "User-Agent": "curl/8.21.0",
+      "Accept": "*/*",
+      "X-Session": "synthetic-canary-123"
+    },
+    "curl_version": "curl 8.21.0 (Windows) libcurl/8.21.0 Schannel zlib/1.3.2 WinIDN WinLDAP"
+  },
+  {
+    "scenario": "header-file-authorization",
+    "redirected_request_canary": false,
+    "expected_canary": false,
+    "redirected_headers": {
+      "Host": "127.0.0.1:63914",
+      "User-Agent": "curl/8.21.0",
+      "Accept": "*/*"
+    },
+    "curl_version": "curl 8.21.0 (Windows) libcurl/8.21.0 Schannel zlib/1.3.2 WinIDN WinLDAP"
+  },
+  {
+    "scenario": "header-file-custom",
+    "redirected_request_canary": true,
+    "expected_canary": true,
+    "redirected_headers": {
+      "Host": "127.0.0.1:63914",
+      "User-Agent": "curl/8.21.0",
+      "Accept": "*/*",
+      "X-API-Key": "synthetic-canary-123"
+    },
+    "curl_version": "curl 8.21.0 (Windows) libcurl/8.21.0 Schannel zlib/1.3.2 WinIDN WinLDAP"
+  },
+  {
+    "scenario": "trusted-same-origin",
+    "redirected_request_canary": true,
+    "expected_canary": true,
+    "redirected_headers": {
+      "Host": "127.0.0.1:14594",
+      "User-Agent": "curl/8.21.0",
+      "Accept": "*/*",
+      "Authorization": "Bearer synthetic-canary-123"
+    },
+    "curl_version": "curl 8.21.0 (Windows) libcurl/8.21.0 Schannel zlib/1.3.2 WinIDN WinLDAP"
+  },
+  {
+    "scenario": "trusted-cross-origin",
+    "redirected_request_canary": true,
+    "expected_canary": true,
+    "redirected_headers": {
+      "Host": "127.0.0.1:63914",
+      "User-Agent": "curl/8.21.0",
+      "Accept": "*/*",
+      "Authorization": "Bearer synthetic-canary-123"
+    },
+    "curl_version": "curl 8.21.0 (Windows) libcurl/8.21.0 Schannel zlib/1.3.2 WinIDN WinLDAP"
+  }
+]

@@ -1,0 +1,6 @@
+__pycache__/
+.scratch/
+.env
+.pytest_cache/
+*.pyc
+dist/

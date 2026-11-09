@@ -1,0 +1,22 @@
+{
+  "analysis_rule": "Report all errors and all raw responses. Do not revise cases, labels or prompt after registration.",
+  "base_runner_sha256": "1454f71826ca20e601f8a51dbacf496bf2bf475b6afc1e195c4dac824a60be2a",
+  "cases_sha256": "36497835cf489e4c479f6124dcc9c62b492332d9dea20c2ac3137ed605a9334c",
+  "id": "curl-redirect-followup-2026-11-05",
+  "max_completion_tokens": 2048,
+  "models": [
+    "muse-wonder-1.0",
+    "muse-spark-1.3"
+  ],
+  "oracle_results_sha256": "060a6109c09f1bcb2b9c41d1d2030643802b80e3f1d7a1caa453426645f2c06c",
+  "oracle_script_sha256": "51d07921d1a5787259c962e7a3e85dbbf5dc39c5393db100f0b97e1134a44225",
+  "policy_sha256": "d678cbf9e3fea87c6fdb13935a0bc642c7abae41dc311de5f23f6e0b8eee8ec1",
+  "primary_measure": "Exact allow/block decision accuracy on six unseen cases in three paired tasks",
+  "prompt_sha256": "688dee4e3b8dceb98a1323d2e9500347a39140cbb9070dc84d571c3372283a9b",
+  "reasoning_effort": "low",
+  "registered_at_utc": "2026-11-05T12:01:56.604988+00:00",
+  "runner_sha256": "b97faf8f982017fbeddaebf91f4a4459957767de0e5f1954d4efc6373ec33628",
+  "runs": 3,
+  "status": "Follow-up stress test designed after original final results; development probe excluded",
+  "temperature": "provider default"
+}

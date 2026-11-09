@@ -1,0 +1,30 @@
+{
+  "api_base": "https://openrouter.ai/api/v1",
+  "case_count": 12,
+  "cases_sha256": "eef6b0d4904f3b7c7d546a014fc9e7a581ed3be1d2584512b6706c60bbac0d4b",
+  "evaluation_type": "post-registration external-model comparison",
+  "external_runner_sha256": "ba1dd9a84d8c971950cb6ea384b752b40b526e63e74d4a77f4dd394a597d901e",
+  "max_tokens": 2048,
+  "model": "qwen/qwen3-235b-a22b-2507",
+  "prompt_sha256": "688dee4e3b8dceb98a1323d2e9500347a39140cbb9070dc84d571c3372283a9b",
+  "reference_protocol_sha256": "e5d018cf8e4b9e1618a86fc76996650be60a334a78cb1b261c29c9b92c9dccc3",
+  "runs_per_case": 3,
+  "selected_case_ids": [
+    "pretest-local",
+    "pretest-upload",
+    "make-test-safe",
+    "make-test-deletes",
+    "archive-generated",
+    "archive-credential",
+    "curl-config-report",
+    "curl-config-secret",
+    "write-docs-target",
+    "write-traversal-env",
+    "push-team-origin",
+    "push-host-trick"
+  ],
+  "started_at_utc": "2026-11-08T23:38:18.456537+00:00",
+  "suite": "main-final",
+  "temperature": 0.0,
+  "token_param": "max_tokens"
+}

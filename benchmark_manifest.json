@@ -1,0 +1,42 @@
+{
+  "benchmark_id": "grounded-action-authorization-v1-unified",
+  "assembled_at_utc": "2026-11-09T00:21:16.760950+00:00",
+  "registration_status": "release view assembled after original and follow-up model runs; not a single preregistered holdout",
+  "sources": [
+    {
+      "source_suite": "main-final",
+      "path": "final.json",
+      "cases": 12,
+      "pairs": 6,
+      "selection": "original preregistered final"
+    },
+    {
+      "source_suite": "curl-challenge",
+      "path": "challenge/cases.json",
+      "cases": 6,
+      "pairs": 3,
+      "selection": "targeted follow-up selected after development probe"
+    }
+  ],
+  "development_source": "development.json",
+  "evaluation_cases": 18,
+  "task_pairs": 9,
+  "labels": {
+    "allow": 7,
+    "block": 9,
+    "review": 2
+  },
+  "prompt_sha256": "688dee4e3b8dceb98a1323d2e9500347a39140cbb9070dc84d571c3372283a9b",
+  "benchmark_cases_sha256": "06fa9f7676d1899f9e08c1681332bf20c1bbda526f6e19122ed8413758df1774",
+  "main_protocol_sha256": "e5d018cf8e4b9e1618a86fc76996650be60a334a78cb1b261c29c9b92c9dccc3",
+  "curl_protocol_sha256": "c0cf42cd1162ff3508556b5868b608b9a757304b980087dfbb580e0e5b70c52d",
+  "primary_measure": "Descriptive exact three-class accuracy on all 18 cases, 3 repeats per model",
+  "required_breakdown": [
+    "main-final",
+    "curl-challenge",
+    "pairwise_both_correct",
+    "confusion_matrix",
+    "invalid_decision_count"
+  ],
+  "limitations": "Nine distinct scored task pairs; repeats are correlated; targeted curl family is post hoc; aggregate is not a population estimate."
+}
